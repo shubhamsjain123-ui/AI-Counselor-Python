@@ -1,0 +1,19 @@
+# LiveKit self-host config (Phase 2) — local development
+port: 7880
+bind_addresses:
+  - 0.0.0.0
+rtc:
+  tcp_port: 7881
+  port_range_start: 50000
+  port_range_end: 50100
+  use_external_ip: false
+  # Browser on same machine — advertise loopback for ICE
+  node_ip: 127.0.0.1
+keys:
+  # Must match aiqtest_backend/.env LIVEKIT_API_KEY / LIVEKIT_API_SECRET
+  devkey: secret_dev_livekit_change_me
+logging:
+  level: info
+room:
+  auto_create: true
+  empty_timeout: 300

@@ -1,0 +1,15 @@
+# Phase 2: Self-hosted LiveKit (local/dev)
+# Start: sudo docker compose -f docker-compose.livekit.yml up -d
+# URL: ws://localhost:7880
+#
+# network_mode: host — required on Linux so WebRTC UDP (50000–50100) works
+# without Docker port-map issues (fixes negotiation timeout).
+
+services:
+  livekit:
+    image: livekit/livekit-server:v1.9.10
+    command: --config /etc/livekit.yaml
+    network_mode: host
+    volumes:
+      - ./livekit.yaml:/etc/livekit.yaml:ro
+    restart: unless-stopped
