@@ -1,0 +1,7 @@
+node_modules/
+.env
+dist/
+cache/intro-beats/*.pcm
+cache/intro-beats/*.mp4
+cache/intro-beats/*.json
+!cache/intro-beats/.gitkeep
